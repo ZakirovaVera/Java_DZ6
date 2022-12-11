@@ -14,11 +14,32 @@
 // | HP | 4ГБ |
 // Отфильтровать ноутбуки их первоначального множества и вывести проходящие по условиям. 
 // (По возрастанию имени ноутбука в алфавитном порядке, по цене по убыванию)
-public class task1 {
+public class main {
     public static void main(String[] args) {
-        Notebook MSI = new Notebook("MSI", 16, 512, "Windows10", "black", 15.6, 8);
-        MSI.PrintInfo();
 
+        Notebook[] notebook = CreateNotebook();
+        Menu menu = new Menu();
+        menu.GetFilter();
+        
+        
     }
-    
+    public static Notebook[] CreateNotebook() {
+        Notebook[] arrNotebooks = new Notebook[]{
+            new Notebook("MSI", 16, 512,
+                "Windows10", "black", 15.6, 8),
+            new Notebook("Aser", 2, 512,
+                "Windows7", "black", 11.6, 2),
+            new Notebook("Asus", 8, 1024,
+                "Windows11", "grey", 17.0, 8),
+            new Notebook("MSI", 8, 512,
+                "---", "black", 15.6, 4),
+        };
+        return arrNotebooks;
+    }
+    public static void printArr(Notebook[] arr) {
+        for (Notebook el : arr) {
+            el.PrintInfo();
+            System.out.println();
+        }
+    }
 }
