@@ -19,9 +19,10 @@ public class main {
 
         Notebook[] notebook = CreateNotebook();
         Menu menu = new Menu();
-        menu.GetFilter();
-        
-        
+        Integer numMenu = menu.GetFilter();
+        FilterNBook filter = new FilterNBook();
+        String resultFilter = filter.Filter(notebook, numMenu);
+        System.out.println(resultFilter);
     }
     public static Notebook[] CreateNotebook() {
         Notebook[] arrNotebooks = new Notebook[]{

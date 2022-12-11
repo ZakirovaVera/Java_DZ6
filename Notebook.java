@@ -4,8 +4,8 @@ public class Notebook {
     Integer hardDiskCapacity; // Объем жесткого диска
     String operatingSystem; // Операционная система
     String color; // Цвет
-    Double diagonal;
-    Integer numberProcessorCores;
+    Double diagonal; // Диагональ
+    Integer numberProcessorCores; // Количество ядер процессора
 
     void  PrintInfo(){
         System.out.printf("%s: ОЗУ %dГб, RAM %dГб, %s, %s, Диагональ экрана %.1f, Количество ядер процессора %d", nameNotebook, RAM, hardDiskCapacity, operatingSystem, color, diagonal, numberProcessorCores);
