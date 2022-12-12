@@ -6,12 +6,13 @@ public class Notebook {
     String color; // Цвет
     Double diagonal; // Диагональ
     Integer numberProcessorCores; // Количество ядер процессора
+    Double priceNB; // цена
 
     void  PrintInfo(){
-        System.out.printf("%s: ОЗУ %dГб, RAM %dГб, %s, %s, Диагональ экрана %.1f, Количество ядер процессора %d", nameNotebook, RAM, hardDiskCapacity, operatingSystem, color, diagonal, numberProcessorCores);
+        System.out.printf("%s: Цена %.2f рублей, ОЗУ %dГб, RAM %dГб, %s, %s, Диагональ экрана %.1f, Количество ядер процессора %d", nameNotebook, priceNB, RAM, hardDiskCapacity, operatingSystem, color, diagonal, numberProcessorCores);
     }
 
-    Notebook(String name, Integer ram, Integer hardDisk, String operSys, String col, Double diag, Integer numProcCor){
+    Notebook(String name, int ram, Integer hardDisk, String operSys, String col, Double diag, Integer numProcCor, Double price){
         nameNotebook = name;
         RAM = ram;
         hardDiskCapacity = hardDisk;
@@ -19,5 +20,6 @@ public class Notebook {
         color = col;
         diagonal = diag;
         numberProcessorCores = numProcCor;
+        priceNB = price;
     }
 }
