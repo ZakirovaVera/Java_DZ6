@@ -3,11 +3,16 @@ import java.util.Scanner;
 public class Menu {
     
     public void PrintMenu() {
-        System.out.print("1 - ОЗУ\n2 - Объем ЖД\n3 - Операционная система\n4 - Цвет\n5 - Диагональ\n6 - Количество ядер процессора");
+        System.out.print("1 - ОЗУ\n"+
+        "2 - Объем ЖД\n"+
+        "3 - Операционная система\n"+
+        "4 - Цвет\n"+
+        "5 - Диагональ\n"+
+        "6 - Количество ядер процессора");
         System.out.println();
     }
 
-    public Integer GetFilter() {
+    public Integer GetMenuCriteria() {
         PrintMenu();
         Scanner iScanner = new Scanner(System.in);
         System.out.print("Введите цифру, соответствующую необходимому критерию: ");

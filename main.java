@@ -18,10 +18,13 @@ public class main {
     public static void main(String[] args) {
 
         Notebook[] notebook = CreateNotebook();
+
         Menu menu = new Menu();
-        Integer numMenu = menu.GetFilter();
+        Integer numMenu = menu.GetMenuCriteria();
+
         FilterNBook filter = new FilterNBook();
         String resultFilter = filter.Filter(notebook, numMenu);
+        
         System.out.println(resultFilter);
     }
     public static Notebook[] CreateNotebook() {
@@ -37,10 +40,10 @@ public class main {
         };
         return arrNotebooks;
     }
-    public static void printArr(Notebook[] arr) {
-        for (Notebook el : arr) {
-            el.PrintInfo();
-            System.out.println();
-        }
-    }
+    // public static void printArr(Notebook[] arr) {
+    //     for (Notebook el : arr) {
+    //         el.PrintInfo();
+    //         System.out.println();
+    //     }
+    // }
 }
