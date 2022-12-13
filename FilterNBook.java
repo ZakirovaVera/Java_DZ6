@@ -6,13 +6,19 @@ public class FilterNBook {
     public String Filter(List<Notebook> arr, Integer numCriteria) {
         // Отсортировать ноутбуки с учетом критерия.
         SortByCriteria(arr, numCriteria);
-
+        String result = "";
         // Сформировать результирующий список данных.
-        String result = "Имя\t|Критерий\n";
-        for (Notebook el : arr) {
-            result += el.nameNotebook + "\t|" + GetCriteria(el, numCriteria) + "\n";
+        if (numCriteria > 0 && numCriteria < 7) {
+            result += "Имя\t|Критерий\n";
+            for (Notebook el : arr) {
+                result += el.nameNotebook + "\t|" + GetCriteria(el, numCriteria) + "\n";
+            }
         }
-
+        else{
+            for (Notebook el : arr) {
+                result += el.GetInfo() + "\n";
+            }
+        }
         return result;
     }
 
@@ -22,8 +28,8 @@ public class FilterNBook {
         arr.sort(new Comparator<Notebook>() {
             @Override
             public int compare(Notebook a, Notebook b) {
-                String aNameAndCriteria = a.nameNotebook + " ";
-                String bNameAndCriteria = b.nameNotebook + " ";
+                String aNameAndCriteria = "";
+                String bNameAndCriteria = "";
 
                 switch (numCriteria) {
                     case 1:
@@ -54,6 +60,10 @@ public class FilterNBook {
                         aNameAndCriteria += a.priceNB > b.priceNB ? 0 : 1;
                         bNameAndCriteria += a.priceNB < b.priceNB ? 0 : 1;
                         break;
+                    case 8:
+                        aNameAndCriteria = a.nameNotebook;
+                        bNameAndCriteria = b.nameNotebook;
+                        break;
                 }
 
                 Integer resultCompare = aNameAndCriteria.compareTo(bNameAndCriteria);
@@ -76,8 +86,6 @@ public class FilterNBook {
                 return arr.diagonal.toString();
             case 6:
                 return arr.numberProcessorCores.toString();
-            case 7:
-                return arr.priceNB.toString();
             default:
                 return "Критерий отсуствует в фильтре";
         }

@@ -22,7 +22,8 @@ public class Program {
 
         List<Notebook> notebookTest = CreateNotebookList();
         // Изначальный список.
-        //PrintList(notebookTest);
+        System.out.println("Ноутбуки до фильтрации:");
+        PrintList(notebookTest);
 
         Menu menu = new Menu();
         Integer numMenu = menu.GetMenuCriteria();
@@ -32,7 +33,7 @@ public class Program {
 
         System.out.println(resultFilter);
         // Отсортированный список по Имя+Критерий.
-        //PrintList(notebookTest);
+        // PrintList(notebookTest);
     }
 
     public static List<Notebook> CreateNotebookList() {
@@ -40,11 +41,11 @@ public class Program {
         arrNotebooks.add(new Notebook("Aser",15, 512, "Windows7", "orange", 11.6, 2, 67500.00));
         arrNotebooks.add(new Notebook("MSI", 16, 512, "Windows10", "white", 15.6, 8, 75000.00));
         arrNotebooks.add(new Notebook("HP", 32, 1024, "Windows11", "green", 15.6, 8, 82000.00));
-        arrNotebooks.add(new Notebook("Asus", 12, 1024, "Windows11", "grey", 17.0, 8, 67500.00));
-        arrNotebooks.add(new Notebook("Aser", 12, 512, "Windows7", "red", 11.6, 2, 34500.00));
-        arrNotebooks.add(new Notebook("Aser", 80, 512, "Windows7", "black", 11.6, 2, 67500.00));
-        arrNotebooks.add(new Notebook("MSI", 8, 512, "---", "black", 15.6, 4, 1000.00));
-        arrNotebooks.add(new Notebook("Aser", 10, 512, "Windows7", "black", 11.6, 2, 67500.00));
+        arrNotebooks.add(new Notebook("Asus", 12, 1024, "Windows11", "grey", 17.0, 8, 44600.00));
+        arrNotebooks.add(new Notebook("Aser", 12, 512, "Windows10", "red", 11.6, 2, 34500.00));
+        arrNotebooks.add(new Notebook("Aser", 80, 512, "Windows7", "black", 11.6, 2, 51000.00));
+        arrNotebooks.add(new Notebook("MSI", 8, 512, "---", "black", 15.6, 4, 21000.00));
+        arrNotebooks.add(new Notebook("Aser", 10, 512, "---", "black", 11.6, 2, 59000.00));
         return arrNotebooks;
     }
 
